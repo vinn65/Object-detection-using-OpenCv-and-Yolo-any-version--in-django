@@ -1,0 +1,70 @@
+<style>
+    /* styling for the header */
+    .header {
+        background-color: #4CAF50; /* green color */
+        color: white;
+        text-align: center;
+        padding: 1em;
+    }
+
+    /* styling for the paragraph */
+    .description {
+        font-size: 1.2em;
+        text-align: justify;
+        padding: 0 2em;
+    }
+
+    /* styling for the form */
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header .btn {
+    background-color: #4CAF50; /* green color */
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    text-decoration: none;
+    margin-left: 10px;
+    }
+    /* styling for the button */
+    button.btn {
+        background-color: #4CAF50; /* green color */
+        color: white;
+        padding: 0.5em 1em;
+        border: none;
+        margin-top: 1em; /* add a margin between the last input field and the button */
+    }
+</style>
+
+<div class="header">
+    <h1>Object Detection and Identification</h1>
+    <a href="{% url 'home' %}" class="btn">Home</a>
+</div>
+
+<div class="description">
+    <p>This is a project that uses a trained deep learning model to detect and identify objects in an image. It uses the YOLO (You Only Look Once) algorithm, specifically version 3, to process an image and returns bounding boxes for objects it detects in the image. YOLO v3 is a real-time object detection algorithm that is able to detect and classify objects in an image using a single convolutional neural network. The algorithm is able to detect a wide range of objects such as people, cars, bicycles, and traffic lights. This version is faster and more accurate than previous versions of YOLO and is able to detect smaller objects in an image. Please upload an image, along with the config, weights, and classes files for the model.</p>
+</div>
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+    </div>
+    <div class="form-group">
+        <label for="config">Config</label>
+        <input type="file" class="form-control-file" id="config" name="config">
+    </div>
+    <div class="form-group">
+        <label for="weights">Weights</label>
+        <input type="file" class="form-control-file" id="weights" name="weights">
+    </div>
+    <div class="form-group">
+        <label for="classes">Classes</label>
+        <input type="file" class="form-control-file" id="classes" name="classes">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

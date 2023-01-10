@@ -1,0 +1,47 @@
+<style>
+    .header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1em;
+    }
+    .description {
+        font-size: 1.2em;
+        text-align: justify;
+        padding: 0 2em;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header .btn {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    text-decoration: none;
+    margin-left: 10px;
+    }
+    button.btn {
+        background-color: #4CAF50; 
+        color: white;
+        padding: 0.5em 1em;
+        border: none;
+        margin-top: 1em; 
+    }
+</style>
+<div class="header">
+    <h1>Object Detection and Identification</h1>
+    <a href="{% url 'detect' %}" class="btn">Detect</a>
+</div>
+<div class="description">
+    <p>This is a project that uses a trained deep learning model to detect and identify objects in an image. It uses the YOLO (You Only Look Once) algorithm, specifically version 3, to process an image and returns bounding boxes for objects it detects in the image. YOLO v3 is a real-time object detection algorithm that is able to detect and classify objects in an image using a single convolutional neural network. The algorithm is able to detect a wide range of objects such as people, cars, bicycles, and traffic lights. This version is faster and more accurate than previous versions of YOLO and is able to detect smaller objects in an image. </p>
+</div>
+<div style="display: flex; align-items: center;margin-top: 10px;">
+    <div>
+        <h3>A sample image is as below</h3>
+        <img src="/static/object-detection.jpg" alt="Processed image" style="width: 100%; margin-left: 20%;">
+
+    </div>
+</div>
